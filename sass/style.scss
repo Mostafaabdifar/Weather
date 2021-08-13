@@ -6,7 +6,7 @@ html {
   font-size: 62.5%;
 
   @include responsive(tab-land) {
-    font-size: 55%;
+    font-size: 50%;
   }
 
   @include responsive(tab-port) {
@@ -56,6 +56,16 @@ body {
   color: $color-white;
   margin: $margin-section;
   @include fontStyle(4rem, 600);
+
+  @include responsive(tab-land) {
+    margin: 2rem auto;
+  }
+  @include responsive(tab-port) {
+    margin: 3rem auto;
+  }
+  @include responsive(phone) {
+    margin: 4rem auto;
+  }
 
 }
 
