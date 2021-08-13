@@ -2,6 +2,7 @@ const form = document.getElementById('select-city')
 const selectDropdown = document.querySelector('.city');
 const sectionApi = document.querySelector('.api-section');
 const msg = document.querySelector('.msg');
+const spinner = document.querySelector(".spinner");
 const KELVIN = 273;
 const key = 'c0b2fde154e22b98a8313be787127295';
 
@@ -12,6 +13,10 @@ form.addEventListener('submit', e => {
 });
 
 function getSearchCity(city) {
+  spinner.removeAttribute('hidden');
+  setTimeout(() => {
+    spinner.setAttribute('hidden', '')
+  }, 1000)
   let api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`;
   fetch(api)
     .then(response => response.json())
@@ -47,6 +52,7 @@ function getSearchCity(city) {
       const icon = checkImg();
 
       /* we can use the following code for the icon section:
+      
       const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
       <img class="shape-weather" src="${icon}" alt="alt=${weather[0]["main"]}">*/
 
