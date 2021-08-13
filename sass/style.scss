@@ -2,8 +2,20 @@
 @import "animation";
 @import "mixin";
 
-html{
+html {
   font-size: 62.5%;
+
+  @include responsive(tab-land) {
+    font-size: 55%;
+  }
+
+  @include responsive(tab-port) {
+    font-size: 50%;
+  }
+
+  @include responsive(phone) {
+    font-size: 45%;
+  }
 }
 
 body {
@@ -14,6 +26,7 @@ body {
 }
 
 #select-city {
+  width: 40rem;
   position: absolute;
   top: 40%;
   left: 50%;
@@ -21,12 +34,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 5rem auto;
 
+  @include responsive(tab-land) {
+    top: 50%;
+    margin: .5rem auto;
+  }
+
+  @include responsive(tab-port) {
+    top: 50%;
+    margin: 2.5rem auto;
+  }
+
+  @include responsive(phone) {
+    top: 50%;
+  }
 }
 
 #select-city>h2 {
   text-align: center;
   color: $color-white;
+  margin: $margin-section;
   @include fontStyle(4rem, 600);
 
 }
@@ -82,6 +110,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 2rem;
+  margin: $margin-section;
   @include shadowBox();
 }
 
@@ -90,17 +119,23 @@ body {
   margin: $margin-section;
 }
 
-.description{
+.name-location i {
+  color: red;
+  margin-right: .5rem
+}
+
+.description {
   @include fontStyle(1.5rem, 400);
   margin: $margin-section;
   text-transform: capitalize;
 }
 
-.temp{
-  @include fontStyle(4rem,700);
+.temp {
+  @include fontStyle(4rem, 700);
   margin: $margin-section;
 }
-.shape-weather{
+
+.shape-weather {
   width: 8rem;
   height: 8rem;
   margin: $margin-section;

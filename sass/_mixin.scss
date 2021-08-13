@@ -1,3 +1,21 @@
+@mixin responsive ($breakpoint){
+  @if $breakpoint == tab-land {
+    @media screen and (max-width:1200px) {
+      @content
+    }
+  };
+  @if $breakpoint == tab-port {
+    @media screen and (max-width:900px) {
+      @content
+    }
+  };
+  @if $breakpoint == phone {
+    @media screen and (max-width:600px){
+      @content;
+    }
+  }
+}
+
 @mixin fontStyle($size,$weight){
   font-family: inherit;
   font-size: $size;

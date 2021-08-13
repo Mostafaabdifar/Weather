@@ -1,5 +1,14 @@
 @keyframes buttonAnimation {}html {
   font-size: 62.5%; }
+  @media screen and (max-width: 1200px) {
+    html {
+      font-size: 55%; } }
+  @media screen and (max-width: 900px) {
+    html {
+      font-size: 50%; } }
+  @media screen and (max-width: 600px) {
+    html {
+      font-size: 45%; } }
 
 body {
   background-color: #272626;
@@ -8,17 +17,31 @@ body {
   font-family: "Roboto", sans-serif; }
 
 #select-city {
+  width: 40rem;
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  margin: 5rem auto; }
+  @media screen and (max-width: 1200px) {
+    #select-city {
+      top: 50%;
+      margin: .5rem auto; } }
+  @media screen and (max-width: 900px) {
+    #select-city {
+      top: 50%;
+      margin: 2.5rem auto; } }
+  @media screen and (max-width: 600px) {
+    #select-city {
+      top: 50%; } }
 
 #select-city > h2 {
   text-align: center;
   color: #fff;
+  margin: 2rem;
   font-family: inherit;
   font-size: 4rem;
   font-weight: 600; }
@@ -71,6 +94,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 2rem;
+  margin: 2rem;
   background: #272626;
   box-shadow: 10px 10px 10px #212020, -5px -5px 10px #4e4d4d; }
 
@@ -79,6 +103,10 @@ body {
   font-size: 3rem;
   font-weight: 600;
   margin: 2rem; }
+
+.name-location i {
+  color: red;
+  margin-right: .5rem; }
 
 .description {
   font-family: inherit;

@@ -50,7 +50,7 @@ function getSearchCity(city) {
       const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
       <img class="shape-weather" src="${icon}" alt="alt=${weather[0]["main"]}">*/
 
-      sectionApi.innerHTML = `<div class = "name-location">${name}</div> <div class="description">${weather[0].description}</div> <div class="temp">${Math.floor(main.temp - KELVIN)}<sup>°C</sup></div> <img class="shape-weather" src="img/${icon}" alt="${weather[0]["main"]}">`
+      sectionApi.innerHTML = `<div class = "name-location"><span><i class="fa fa-map-marker"></i></span>${name}</div> <div class="description">${weather[0].description}</div> <div class="temp">${Math.floor(main.temp - KELVIN)}<sup>°C</sup></div> <img class="shape-weather" src="img/${icon}" alt="${weather[0]["main"]}">`
     })
     .catch(() => {
       msg.textContent = "Server Error!";
